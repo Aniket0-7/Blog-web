@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anik Blogs</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="nav container">
+            <a href="#" class="logo">Anik <span>blog.</span></a>
+            <a href="#" class="login">Sign Up</a>
+        </div>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-text container">
+            <h2 class="home-title">Trending Blogs</h2>
+            <span class="home-subtitle">Your source of great content</span>
+        </div>
+    </section>
+
+    <section class="about container" id="about">
+        <div class="contentBx">
+            <h2 class="titleText">Catch up with the trending topics</h2>
+            <p class="title-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum eos consequuntur voluptate dolorum
+                totam provident ducimus cupiditate dolore doloribus repellat. Saepe ad fugit similique quis quam. Odio
+                suscipit incidunt distinctio.
+                <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed blanditiis libero pariatur ipsum
+                suscipit voluptates aut, repellendus quos dolor autem, natus laboriosam consectetur maxime cumque, sunt
+                magni optio? Veritatis, ea?
+            </p>
+            <a href="#" class="btn2">Read more</a>
+        </div>
+        <div class="imgBx">
+            <img src="images/about.png" alt="" class="fitBg">
+        </div>
+    </section>
+
+    <div class="post-filter container">
+        <span  class="filter-item" id="news" >News</span>
+        <span class="filter-item" id="events">Events</span>
+        <span class="filter-item" id="jobs">Jobs</span>
+    </div>
+
+    <main>
+        <div class="cards-container container flex" id="cards-container">
+            
+        </div>
+    </main>
+
+    <template id="template-news-card">
+        <div class="card">
+            <div class="card-header">
+                <img src="https://via.placeholder.com/400x200" alt="news-image" id="news-img">
+            </div>
+            <div class="card-content">
+                <h3 id="news-title"></h3>
+                <h6 class="news-source" id="news-source"></h6>
+                <p class="news-desc" id="news-desc"></p>
+            </div>
+        </div>
+    </template>
+
+
+    
+    <footer>
+        <div class="footer-container">
+            <div class="sec aboutus">
+                <h2>About Us</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus quisquam minus quo illo numquam vel
+                    incidunt pariatur hic commodi expedita tempora praesentium at iure fugiat ea, quam laborum aperiam
+                    veritatis.</p>
+                <ul class="sci">
+                    <li><a href="#"><img src="https://w7.pngwing.com/pngs/648/943/png-transparent-instagram-logo-logo-instagram-computer-icons-camera-instagram-logo-text-trademark-magenta-thumbnail.png" alt="ig" height="30px" ></a></li>
+                    <li><a href="https://www.linkedin.com/in/aniket-singh-9225a7230/"><img src="https://w7.pngwing.com/pngs/739/243/png-transparent-social-media-linkedin-computer-icons-facebook-inc-social-network-social-media-blue-text-rectangle-thumbnail.png" alt="limkdin" height="30px" style="object-fit: cover;" ></a></li>
+                </ul>
+            </div>
+            <div class="sec quicklinks">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="#">Home</a></li>
+
+                </ul>
+            </div>
+            <div class="sec contactBx">
+                <h2>Contact Info</h2>
+                <ul class="info">
+                    <li>
+                        <span><i class='bx bxs-map'></i></span>
+                        <span>sambalpur,<br> odisha</span>
+                    </li>
+                    <li>
+                        <span><i class='bx bx-envelope'></i></span>
+                        <p><a href="mailto:aniker207@gmail.com">aniker207@gmail.com</a></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -25,7 +25,7 @@ events.style.backgroundColor="white",
 })
 
 news.addEventListener("click",() => {
-    fetchdata('news'),
+    fetchdata('tech'),
     news.style.backgroundColor="rgba(77, 228, 255)",
     events.style.backgroundColor="white",
         jobs.style.backgroundColor="white"
@@ -33,49 +33,49 @@ news.addEventListener("click",() => {
 
 // Api fteching : -
 
-const API_KEY = "9d2ea32c3e9841e29830436fc8f0de7d";
+const API_KEY = "pub_24603370c3506c6bb96c2fb8cd356a70e242e";
 
-const url = "https://newsapi.org/v2/everything?q=";
+const url = " https://newsdata.io/api/1/news?";
 
-window.addEventListener("load",() =>fetchdata('news'), news.style.backgroundColor="rgba(77, 228, 255)")
+window.addEventListener("load",() =>fetchdata('tech'), news.style.backgroundColor="rgba(77, 228, 255)")
 
 const fetchdata = async (query) => {
-    const res = await fetch(`${url}${query}&apiKey=${API_KEY}`);
+    const res = await fetch(`${url}apikey=${API_KEY}&q=${query}`);
     const data = await res.json();
-    bindData(data.articles);
+    bindData(data.results);
 }
 
-function bindData(articles) {
+function bindData(results) {
     const cardsContainer = document.getElementById("cards-container");
     const newsCardTemplate = document.getElementById("template-news-card");
 
     cardsContainer.innerHTML = "";
 
-    articles.forEach((article) => {
-        if (!article.urlToImage) return;
+    results.forEach((result) => {
+        if (!result.image_url) return;
         const cardClone = newsCardTemplate.content.cloneNode(true);
-        fillDataInCard(cardClone, article);
+        fillDataInCard(cardClone, result);
         cardsContainer.appendChild(cardClone);
     });
 }
 
-function fillDataInCard(cardClone, article) {
+function fillDataInCard(cardClone,results) {
     const newsImg = cardClone.querySelector("#news-img");
     const newsTitle = cardClone.querySelector("#news-title");
     const newsSource = cardClone.querySelector("#news-source");
-    const newsDesc = cardClone.querySelector("#news-desc");
+   
 
-    newsImg.src = article.urlToImage;
-    newsTitle.innerHTML = article.title;
-    newsDesc.innerHTML = article.description;
+    newsImg.src = results.image_url;
+    newsTitle.innerHTML = results.title;
 
-    const date = new Date(article.publishedAt).toLocaleString("en-US", {
+
+    const date = new Date(results.pubDate).toLocaleString("en-US", {
         timeZone: "Asia/Jakarta",
     });
 
-    newsSource.innerHTML = `${article.source.name} · ${date}`;
+    newsSource.innerHTML = `${results.source_id} · ${date}`;
 
     cardClone.firstElementChild.addEventListener("click", () => {
-        window.open(article.url, "_blank");
+        window.open(results.link, "_blank");
     });
 }
